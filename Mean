@@ -1,0 +1,21 @@
+import java.util.*;
+
+class solution{
+    public static void main(String[] args){
+
+        int arr[] = {2,3,4,5};
+
+        int n = arr.length;
+
+        double mean = 0;
+        int k = 0;
+
+        for(int i=0; i<n; i++){
+              k += arr[i];
+        }
+
+        mean = k/n;
+
+        System.out.println(" mean : " + mean);
+    }
+}
