@@ -1,0 +1,61 @@
+import java.util.*;
+
+class solution{
+    public static int secondSmall(int[] arr,int k){
+        if(k < 2){
+            return -1;
+        }
+        int small = Integer.MAX_VALUE;
+        int secondSmall = Integer.MAX_VALUE;
+
+        for(int i=0; i<k; i++){
+            if(arr[i] < small){
+                secondSmall = small;
+                small = arr[i];
+            }else if (arr[i] < secondSmall && arr[i] != small){
+                secondSmall = arr[i];
+            }
+        }
+        return secondSmall;
+    }
+
+    public static int secondLarge(int[] arr,int k){
+        if(k < 2){
+            return -1;
+        }
+
+        int largest = Integer.MIN_VALUE;
+        int secondLargest = Integer.MIN_VALUE;
+
+        for(int i=0; i<k; i++){
+            if(arr[i] > largest){
+                secondLargest = largest;
+                largest = arr[i];
+            }else if(arr[i] > secondLargest && arr[i] != largest){
+                secondLargest = arr[i];
+            }
+        }
+        return secondLargest;
+    }
+
+
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+
+        for(int i=0; i<arr.length; i++){
+            arr[i] = sc.nextInt();
+        }
+
+       int k = arr.length;
+
+       int y =  secondSmall(arr,k);
+        int z = secondLarge(arr,k);
+
+
+        System.out.println(y);
+        System.out.println(z);
+
+    }
+}
