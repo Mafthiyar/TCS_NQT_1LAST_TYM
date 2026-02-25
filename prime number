@@ -1,0 +1,26 @@
+import java.util.*;
+
+class solution {
+    public static void main(String[] args) {
+        int n = 7;
+        boolean isboolean = true;
+
+        if(n <= 1){
+            isboolean = false;
+        }else{
+            for(int i=2; i<n; i++) {
+                if (n % i == 0) {
+                    isboolean = false;
+                    break;
+                }
+            }
+        }
+
+        if(isboolean){
+            System.out.println("prime");
+        }else{
+            System.out.println("not prime");
+        }
+
+    }
+}
