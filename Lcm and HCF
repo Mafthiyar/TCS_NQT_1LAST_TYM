@@ -1,0 +1,22 @@
+import java.util.*;
+
+class solution {
+    public static void main(String[] args) {
+        int a = 48;
+        int b = 18;
+
+        int lcm = a * b;
+        while(b != 0){
+            int temp = b;
+            b =  a % b;
+            a = temp;
+        }
+
+        int flcm = lcm / a;
+        System.out.print(a + " ");
+        System.out.print(flcm + " ");
+
+
+
+    }
+}
