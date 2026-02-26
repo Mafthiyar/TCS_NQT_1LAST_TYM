@@ -9,7 +9,7 @@ class solution {
 
         System.out.print(f + " ");
         System.out.print(s + " ");
-        for(int i=1; i<=n; i++){
+        for(int i=2; i<=n; i++){
             int c = f + s;
             System.out.print(c + " ");
             f = s;
