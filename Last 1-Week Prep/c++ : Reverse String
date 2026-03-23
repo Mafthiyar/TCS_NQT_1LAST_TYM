@@ -1,0 +1,16 @@
+#include<iostream>
+#include<string>
+#include<algorithm>
+
+int main(){
+    std::string str = "Mafthiyar";
+    std::cout<< "orginal string :" << str << std::endl;
+    
+    
+    std::reverse(str.begin(),str.end());
+    
+    
+    std::cout<< "reversed string :" << str << std::endl;
+    
+    return 0;
+}
