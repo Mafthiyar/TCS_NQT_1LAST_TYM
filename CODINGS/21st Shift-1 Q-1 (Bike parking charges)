@@ -1,0 +1,39 @@
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        try {
+            int n = sc.nextInt();
+
+            if(n <= 0){
+                System.out.println("error");
+            }
+
+            else {
+                int cost = 0;
+
+                // first 2 items
+                if(n >= 1) cost += 100;
+                if(n >= 2) cost += 100;
+
+                // next 3 items (3,4,5)
+                if(n >= 3) cost += 50;
+                if(n >= 4) cost += 50;
+                if(n >= 5) cost += 50;
+
+                // remaining items (6 and above)
+                if(n > 5){
+                    cost += (n - 5) * 20;
+                }
+
+                System.out.println(cost);
+            }
+        }
+        catch(Exception e){
+            System.out.println("error");
+        }
+    }
+}
