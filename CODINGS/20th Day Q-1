@@ -1,0 +1,37 @@
+import java.util.*;
+
+class gymFee{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+
+        String sender[] = new String[n];
+        String receiver[] = new String[n];
+        double amt[] = new double[n];
+        String extra[] = new String[n];
+        long time[] = new long[n];
+
+        for(int i=0; i<n; i++){
+            sender[i] = sc.next();
+            receiver[i] = sc.next();
+            amt[i] = sc.nextDouble();
+            extra[i] = sc.next();
+            time[i] = sc.nextLong();
+        }
+
+        for(int i=0; i<n; i++){
+            for(int j=i+1; j<n; j++){
+                if(time[j] - time[i] <= 60){
+                    if(sender[i].equals(sender[j]) && receiver[i].equals(receiver[j]) && amt[i] == amt[j]){
+                        System.out.print(sender[j] + " " + receiver[j] + " ");
+                        System.out.printf("%.2f" , amt[j]);
+                        System.out.print(" " + extra[j]);
+                        System.out.println(" " + time[j]);
+                    }
+                }
+            }
+        }
+
+
+    }
+}
