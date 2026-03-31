@@ -1,0 +1,53 @@
+import java.util.*;
+
+class gymFee{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int cities = sc.nextInt();
+        int edges = sc.nextInt();
+
+        int u[] = new int[edges];
+        int v[] = new int[edges];
+        int cost[] = new int[edges];
+
+        for(int i=0; i<edges; i++){
+            u[i] = sc.nextInt();
+            v[i] = sc.nextInt();
+            cost[i] = sc.nextInt();
+        }
+
+        for(int i=0; i<edges; i++){
+
+            for(int j=i+1; j<edges; j++){
+                int temp;
+
+                if(cost[i] > cost[j]){
+
+                    temp = cost[i]; cost[i] = cost[j]; cost[j] = temp;
+                    temp = u[i]; u[i] = u[j]; u[j] = temp;
+                    temp = v[i]; v[i] = v[j]; v[j] = temp;
+                }
+            }
+        }
+
+        boolean visited[] = new boolean[cities + 1];
+
+       int totalcost = 0;
+       int totaledges = 0;
+
+       for(int i=0; i<edges; i++){
+           if(!(visited[u[i]] && visited[v[i]])){
+
+               visited[u[i]] = true;
+               visited[v[i]] = true;
+
+               totalcost += cost[i];
+               totaledges++;
+           }
+
+       }
+        System.out.println(totalcost);
+
+
+    }
+}
