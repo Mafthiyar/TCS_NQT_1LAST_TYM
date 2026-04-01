@@ -1,0 +1,36 @@
+import java.util.*;
+
+import static java.util.stream.DoubleStream.generate;
+
+class a{
+    static int n = 4;
+    public static void main (String[] args) {
+        int arr[] = new int[4];
+
+        arr[0] = 1;
+        arr[3] = 3;
+
+        generate(arr, 1);
+
+    }
+
+          static void generate(int arr[], int pos){
+             if(pos == arr.length-1){
+                 for(int i=0; i<arr.length; i++){
+                     System.out.print(arr[i] + " ");
+                 }
+                 System.out.println();
+                 return;
+             }
+
+             for(int k=1; k<=n; k++){
+                 if(k != arr[pos-1]){
+                     arr[pos] = k;
+                     generate(arr, pos+1);
+                 }
+             }
+
+
+        }
+
+}
