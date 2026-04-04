@@ -1,0 +1,23 @@
+import java.util.*;
+
+class a {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int d = sc.nextInt();
+        int t = sc.nextInt();
+
+        if(t > 60 || t == 0 || d == 0){
+            System.out.println("Error");
+            return;
+        }
+
+        int r = (d) * 18/5;
+
+        int s = r/t;
+
+        System.out.println(s);
+
+
+    }
+}
