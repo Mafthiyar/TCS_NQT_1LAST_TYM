@@ -4,17 +4,15 @@ class a {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        int d = sc.nextInt();
-        int t = sc.nextInt();
+        double d = sc.nextDouble();
+        double t = sc.nextDouble();
 
         if(t > 60 || t == 0 || d == 0){
-            System.out.println("Error");
+            System.out.print("Error");
             return;
         }
-
-        int r = (d) * 18/5;
-
-        int s = r/t;
+        double r = d /t;
+        int s = (int) (r * 3.6);
 
         System.out.println(s);
 
